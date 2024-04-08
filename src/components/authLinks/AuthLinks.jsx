@@ -1,9 +1,18 @@
+import Link from 'next/link'
 import styles from './authLinks.module.sass'
 
 const AuthLinks = () => {
-  return (
-    <div className={styles.container}>AuthLinks</div>
-  )
+  const status = false
+  return (<>
+    {status ? 
+    (<>
+      <Link href="/write">Write</Link>
+      <span className={styles.link}>Logout</span>
+    </>) : 
+    (
+      <Link href="/login">Login</Link>
+    )}
+  </> )
 }
 
 export default AuthLinks
